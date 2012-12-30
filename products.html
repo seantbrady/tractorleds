@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>Tractor LEDs &middot; Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="#">Products</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <h3>Tractor LEDs</h3>
+    </div>
+
+    <div class="row">
+        <div class="span12 minitron">
+            <img src="img/headline-headlights.jpg"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span4">
+            <div class="product-selection">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Choose Your Tractor...</legend>
+                        <div class="control-group">
+                            <label class="control-label" for="select-make">Make</label>
+                            <div class="controls product-control">
+                                <select id="select-make">
+                                    <option>Select...</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="select-series">Series</label>
+                            <div class="controls product-control">
+                                <select id="select-series">
+                                    <option>Select...</option>
+                                    <option>100</option>
+                                    <option>200</option>
+                                    <option>300</option>
+                                    <option>400</option>
+                                    <option>600</option>
+                                    <option>800</option>
+                                    <option>900</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="select-model">Model</label>
+                            <div class="controls product-control">
+                                <select id="select-model">
+                                    <option>Select...</option>
+                                    <option>316</option>
+                                    <option>318</option>
+                                    <option>330</option>
+                                    <option>332</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="select-connector">Connector</label>
+                            <div class="controls product-control">
+                                <select id="select-connector">
+                                    <option>Select...</option>
+                                    <option>2 Female Spades</option>
+                                    <option>1 Female Spade &amp; 1 Ring Connector</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="product-image">
+                            <img src="img/spade-ring.png" class="img-polaroid">
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="product-details">
+                <div class="product-image">
+                    <img src="img/leds.jpg" class="img-polaroid">
+                </div>
+                <div class="product-description">
+                    <p>Built 100% in the USA, these have been engineered to not only be brighter but also draw less power than
+                        the stock system. The light output of these is an eye pleasing natural 4500k color unlike the cold
+                        temperature of other LED bulbs. The natural 4500k white color reduces glare in rainy or misty conditions
+                        while appearing brightest to the eye. Here are the specs of the JDLEDs light system:</p>
+                    <ul>
+                        <li>100% plug and play with no modifications</li>
+                        <li>Produces just under 2000 lumen of light, twice as bright as the stock bulbs.</li>
+                        <li>Consumes less than 1/3 the total power compared to the stock bulbs</li>
+                        <li>Rated for 50,000 hours of usage</li>
+                        <li>Fully CNC’d heatsink to allow for high driving currents</li>
+                        <li>Integrated optics for a far throw as well as a wide spread</li>
+                        <li>Most Efficient LED’s on the market for maximum output</li>
+                        <li>Warranty 1 year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <p>&copy; Tractor LEDs, LLC 2012</p>
+    </div>
+
+</div>
+<!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var products = {
+            'John Deere' : {
+                '300' : {
+                    '316' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '318' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '330' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '332' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    }
+                }
+            },
+            'Cub Cadet' : {
+                '300' : {
+                    '316' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '318' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '330' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '332' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    }
+                }
+            }
+
+        }
+
+        var init = function() {
+            $.each(products, function(make) {
+                $('#select-make').append('<option value="' + make + '">' + make + '</option>');
+            });
+        };
+        init();
+
+        var selectMake = function(make) {
+            $.each(products[make], function(series) {
+                $('#select-series').append('<option value="' + series + '">' + series + '</option>');
+            });
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+body {
+    background-image: url('../img/stripe.png');
+    background-color: #696969;
+}
+
+.container > hr {
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
+}
+
+.masthead {
+    margin: 20px 20px 0px 20px;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    margin: 0;
+    text-align: center;
+}
+
+.jumbotron > img {
+    width: 100%;
+}
+
+.minitron {
+    margin-bottom: 20px;
+}
+
+.minitron > img {
+    width: 100%;
+}
+
+.content {
+    margin: 20px 40px 20px 40px;
+}
+
+.footer {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.product-details {
+    -webkit-box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
+
+    margin: 20px 30px 20px 30px;
+    padding: 20px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.product-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-selection {
+    margin: 20px;
+}
+
+.form-horizontal .product-control {
+    margin-left: 80px;
+}
+
+.form-horizontal .control-label {
+    width: 30px;
+}
