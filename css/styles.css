@@ -55,6 +55,11 @@ body {
     border-radius: 10px;
 }
 
+#connector-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .product-image {
     margin-bottom: 20px;
     text-align: center;

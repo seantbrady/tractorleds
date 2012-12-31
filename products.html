@@ -60,42 +60,25 @@
                         <div class="control-group">
                             <label class="control-label" for="select-series">Series</label>
                             <div class="controls product-control">
-                                <select id="select-series">
-                                    <option>Select...</option>
-                                    <option>100</option>
-                                    <option>200</option>
-                                    <option>300</option>
-                                    <option>400</option>
-                                    <option>600</option>
-                                    <option>800</option>
-                                    <option>900</option>
+                                <select id="select-series" disabled="disabled">
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="select-model">Model</label>
                             <div class="controls product-control">
-                                <select id="select-model">
-                                    <option>Select...</option>
-                                    <option>316</option>
-                                    <option>318</option>
-                                    <option>330</option>
-                                    <option>332</option>
+                                <select id="select-model" disabled="disabled">
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="select-connector">Connector</label>
                             <div class="controls product-control">
-                                <select id="select-connector">
-                                    <option>Select...</option>
-                                    <option>2 Female Spades</option>
-                                    <option>1 Female Spade &amp; 1 Ring Connector</option>
+                                <select id="select-connector" disabled="disabled">
                                 </select>
                             </div>
                         </div>
-                        <div class="product-image">
-                            <img src="img/spade-ring.png" class="img-polaroid">
+                        <div id="connector-image">
                         </div>
                         <button type="submit" class="btn">Submit</button>
                     </fieldset>
@@ -146,6 +129,8 @@
     $(document).ready(function() {
         var products = {
             'John Deere' : {
+                '100' : {},
+                '200' : {},
                 '300' : {
                     '316' : {
                         'Female Spade/Ring' : {},
@@ -163,7 +148,20 @@
                         'Female Spade/Ring' : {},
                         '2 Female Spades' : {}
                     }
-                }
+                },
+                '400' : {
+                    '420' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    },
+                    '430' : {
+                        'Female Spade/Ring' : {},
+                        '2 Female Spades' : {}
+                    }
+                },
+                '600' : {},
+                '800' : {},
+                '900' : {}
             },
             'Cub Cadet' : {
                 '300' : {
@@ -196,11 +194,118 @@
         init();
 
         var selectMake = function(make) {
-            $.each(products[make], function(series) {
-                $('#select-series').append('<option value="' + series + '">' + series + '</option>');
+            clearSeries();
+            clearModel();
+            clearConnector();
+            try {
+                $.each(products[make], function(series) {
+                    $('#select-series').append('<option value="' + series + '">' + series + '</option>');
+                });
+                $('#select-series').prepend('<option value="">Select...</option>');
+                $('#select-series').removeAttr('disabled');
+            } catch (e) {
+                // ignore value not found
+            }
+        }
+        $('#select-make').change(function() {
+            var str = "";
+            $("#select-make option:selected").each(function () {
+                selectMake($(this).text());
             });
+        })
+
+        var selectSeries = function(series) {
+            clearModel();
+            clearConnector();
+            var make = $("#select-make option:selected").text();
+            try {
+                $.each(products[make][series], function(model) {
+                    $('#select-model').append('<option value="' + model + '">' + model + '</option>');
+                });
+                $('#select-model').prepend('<option value="">Select...</option>');
+                $('#select-model').removeAttr('disabled');
+            } catch (e) {
+                // ignore value not found
+            }
+        }
+        $('#select-series').change(function() {
+            var str = "";
+            $("#select-series option:selected").each(function () {
+                selectSeries($(this).text());
+            });
+        })
+
+        var selectModel = function(model) {
+            clearConnector();
+            var make = $("#select-make option:selected").text();
+            var series = $("#select-series option:selected").text();
+            var connector = products[make][series][model];
+            if (connector != undefined) {
+                $.each(products[make][series][model], function(connector) {
+                    $('#select-connector').append('<option value="' + connector + '">' + connector + '</option>');
+                });
+                $('#select-connector').prepend('<option value="">Select...</option>');
+                $('#select-connector').removeAttr('disabled');
+            }
+        }
+        $('#select-model').change(function() {
+            var str = "";
+            $("#select-model option:selected").each(function () {
+                selectModel($(this).text());
+            });
+        });
+
+        var selectConnector = function(connector) {
+            hideConnectorImage();
+            showConnectorImage(connector);
+        }
+        $('#select-connector').change(function() {
+            var str = "";
+            $("#select-connector option:selected").each(function () {
+                selectConnector($(this).text());
+            });
+        })
+
+        var clearSeries = function() {
+            $('#select-series').html('').attr('disabled', 'disabled');
         }
 
+        var clearModel = function() {
+            $('#select-model').html('').attr('disabled', 'disabled');
+        }
+
+        var clearConnector = function() {
+            $('#select-connector').html('').attr('disabled', 'disabled');
+            hideConnectorImage();
+        }
+
+        var connectorImages = {
+            'Female Spade/Ring' : 'connector-spade-ring.png',
+            '2 Female Spades' : 'connector-2-spades.png'
+        }
+
+        var hideConnectorImage = function(callback) {
+            $('#connector-image').fadeOut(callback);
+        }
+        var showConnectorImage = function(connector) {
+            var image = $('#connector-image img').length;
+            if (image > 0) {
+                console.log('hello');
+            } else {
+                console.log('world');
+            }
+            var cImage = connectorImages[connector];
+            if (cImage != undefined) {
+                if (image > 0) {
+                    $('#connector-image').fadeOut(function() {
+                        $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').fadeIn();
+                    });
+                } else {
+                    $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').show('fast', 'linear');
+                }
+            }
+            console.log($('#connector-image').html());
+        }
     });
 
 
