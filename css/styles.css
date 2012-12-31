@@ -14,13 +14,17 @@ body {
     -moz-box-shadow: 0 0 10px 7px rgba(0, 0, 0, 0.15);
 }
 
-.masthead {
-    margin: 20px 20px 0px 20px;
+.top-nav {
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
-/* Main marketing message and sign up button */
+.logo > h3 {
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
 .jumbotron {
-    margin: 0;
     text-align: center;
 }
 
@@ -37,11 +41,16 @@ body {
 }
 
 .content {
-    margin: 20px 40px 20px 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content > p {
+    margin: 10px 60px 10px 60px;
 }
 
 .footer {
-    margin: 0px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
