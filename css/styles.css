@@ -76,3 +76,7 @@ body {
 .form-horizontal .control-label {
     width: 30px;
 }
+
+.product-selection input[name=submit] {
+    float: right;
+}

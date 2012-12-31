@@ -46,41 +46,48 @@
     <div class="row">
         <div class="span4">
             <div class="product-selection">
-                <form class="form-horizontal">
+                <form class="form-horizontal" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="JY3QAJ39T9YNY">
                     <fieldset>
                         <legend>Choose Your Tractor...</legend>
                         <div class="control-group">
                             <label class="control-label" for="select-make">Make</label>
+                            <input type="hidden" name="on0" value="Make"/>
                             <div class="controls product-control">
-                                <select id="select-make">
+                                <select id="select-make" name="os0">
                                     <option>Select...</option>
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="select-series">Series</label>
+                            <input type="hidden" name="on1" value="Series"/>
                             <div class="controls product-control">
-                                <select id="select-series" disabled="disabled">
+                                <select id="select-series" disabled="disabled" name="os1">
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="select-model">Model</label>
+                            <input type="hidden" name="on2" value="Model"/>
                             <div class="controls product-control">
-                                <select id="select-model" disabled="disabled">
+                                <select id="select-model" disabled="disabled" name="os2">
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="select-connector">Connector</label>
+                            <input type="hidden" name="on3" value="Connector"/>
                             <div class="controls product-control">
-                                <select id="select-connector" disabled="disabled">
+                                <select id="select-connector" disabled="disabled" name="os3">
                                 </select>
                             </div>
                         </div>
                         <div id="connector-image">
                         </div>
-                        <button type="submit" class="btn">Submit</button>
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </fieldset>
                 </form>
             </div>
@@ -301,7 +308,7 @@
                         $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').fadeIn();
                     });
                 } else {
-                    $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').show('fast', 'linear');
+                    $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').fadeIn();
                 }
             }
             console.log($('#connector-image').html());
