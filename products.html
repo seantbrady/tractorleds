@@ -297,11 +297,6 @@
         }
         var showConnectorImage = function(connector) {
             var image = $('#connector-image img').length;
-            if (image > 0) {
-                console.log('hello');
-            } else {
-                console.log('world');
-            }
             var cImage = connectorImages[connector];
             if (cImage != undefined) {
                 if (image > 0) {
@@ -312,7 +307,6 @@
                     $('#connector-image').html('<img src="img/' + cImage + '" class="img-polaroid">').css('display', 'none').fadeIn();
                 }
             }
-            console.log($('#connector-image').html());
         }
     });
 
