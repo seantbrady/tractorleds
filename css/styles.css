@@ -47,6 +47,10 @@ h3 {
     width: 100%;
 }
 
+.jumbotron > img {
+    height: 300px;
+}
+
 .minitron {
     margin-bottom: 20px;
 }
