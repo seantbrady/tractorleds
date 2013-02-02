@@ -14,7 +14,7 @@ h3 {
 
 .subtitle {
     margin-left: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #eee;
 }
 
@@ -52,7 +52,7 @@ h3 {
 }
 
 .minitron {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .minitron > img {
@@ -60,8 +60,16 @@ h3 {
 }
 
 .content {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.contact {
+    margin-top: -10px;
+}
+
+.mailing {
+    margin: 100px 0px 0px -20px;
 }
 
 .content > p {
@@ -111,4 +119,8 @@ h3 {
 
 .product-selection input[name=submit] {
     float: right;
+}
+
+.lead {
+    font-size: 16px;
 }
